@@ -1,0 +1,14 @@
+[
+    {
+        "user_id" : 4,
+        "reaction_type": "Happy"
+    },
+    {
+        "user_id" : 2,
+        "reaction_type": "Like"
+    },
+    {
+        "user_id" : 1,
+        "reaction_type": "Dislike"
+    }
+]
