@@ -1,0 +1,11 @@
+{{#each musicPosts as |post| }}
+<section>
+    <h2 href="/music/{{post.id}}">{{post.song_title}}</h2>
+    <h3>{{post.artist_name}}</h3>
+    <h3>{{post.genre}}</h3>
+    <h4>{{format_date post.date_created}} - {{post.user.username}}</h4>
+    {{#each post.comments as |comment|}}
+        <p>{{comment.description}}</p>
+    {{/each}}
+</section>
+{{/each}}
