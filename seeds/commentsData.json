@@ -1,14 +1,17 @@
 [
   {
     "user_id" : 4,
+    "music_id": 2,
     "description": "Ok music."
   },
   {
     "user_id" : 2,
+    "music_id": 1,
     "description": "Good job!"
   },
   {
     "user_id" : 1,
+    "music_id": 3,
     "description": "Sucks, try again."
   }
 ]
