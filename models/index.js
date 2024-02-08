@@ -3,12 +3,27 @@ const Comments = require('./Comments');
 const Reactions = require('./Reactions');
 const Music = require('./Music');
 
-User.hasMany(Music, Comments, Reactions, {
+User.hasMany(Music, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
   });
 
-Music.hasMany(Comments, Reactions, {
+User.hasMany(Comments, {
+  foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
+
+User.hasMany(Reactions, {
+  foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
+
+Music.hasMany(Comments, {
+    foreignKey: 'music_id',
+    onDelete: 'CASCADE'
+  });
+
+Music.hasMany(Reactions, {
     foreignKey: 'music_id',
     onDelete: 'CASCADE'
   });
@@ -34,8 +49,4 @@ Music.belongsTo(User, {
   });
 
 
-
-
-
-
-  module.exports = { User, Comments, Reactions, Music };
+module.exports = { User, Comments, Reactions, Music };
