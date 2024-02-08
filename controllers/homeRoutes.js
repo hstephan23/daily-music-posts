@@ -19,8 +19,10 @@ router.get('/', async (req, res) => {
                 attributes: ['reaction_type'],
             }
           ],
-        })
-        console.log(musicData);
+        });
+        const musicPosts = musicData.map((music) => music.get ({ plain: true }));
+        console.log(JSON.stringify(musicPosts));
+        res.json(musicPosts)
     }
     catch (err) {
         res.status(500).json(err);
