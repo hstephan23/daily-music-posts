@@ -1,14 +1,17 @@
 [
     {
         "user_id" : 4,
+        "music_id": 1,
         "reaction_type": "Happy"
     },
     {
         "user_id" : 2,
+        "music_id": 2,
         "reaction_type": "Like"
     },
     {
         "user_id" : 1,
+        "music_id": 3,
         "reaction_type": "Dislike"
     }
 ]

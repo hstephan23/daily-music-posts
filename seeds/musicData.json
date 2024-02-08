@@ -1,21 +1,18 @@
 [
     {
         "user_id" : 4,
-        "music_id": 1,
         "song_title": "Gangnam Style",
         "artist_name": "PSY",
         "genre": "K-Pop"
     },
     {
         "user_id" : 2,
-        "music_id": 2,
         "song_title": "Under the Bridge",
         "artist_name": "Red Hot Chili Peppers",
         "genre": "Rock"
     },
     {
         "user_id" : 1,
-        "music_id": 3, 
         "song_title": "Stairway to Heaven",
         "artist_name": "Led Zeppelin",
         "genre": "Rock"
