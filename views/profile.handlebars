@@ -1,0 +1,14 @@
+<h2>Welcome {{username}}</h2>
+
+{{#if musicPosts.length}}
+<h4>Posts</h4>
+
+{{#each musicPosts as | post | }}
+<h3>{{post.song_title}}</h3>
+<h3>{{post.artist_name}}</h3>
+<h3>{{post.genre}}</h3>
+{{/each}}
+
+{{/if}}
+
+<script src="./js/profile.js"></script>
