@@ -4,6 +4,11 @@
     <h3>{{post.artist_name}}</h3>
     <h3>{{post.genre}}</h3>
     <h4>{{format_date post.date_created}} - {{post.user.username}}</h4>
+    <form class="form new-comment">
+      <div class="form-group">
+        <input class="form-input" type="text" id="comment" name="comment" placeholder="Add your comment here..." />
+      </div>
+    </form>
     {{#each post.comments as |comment|}}
         <p>{{comment.description}}</p>
     {{/each}}
