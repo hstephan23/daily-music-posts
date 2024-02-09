@@ -24,7 +24,8 @@ router.get('/', async (req, res) => {
         console.log(JSON.stringify(musicPosts));
         
         res.render('homepage', {
-            musicPosts
+            musicPosts,
+            logged_in: req.session.logged_in
         })
     }
     catch (err) {
