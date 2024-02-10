@@ -1,26 +1,31 @@
 const newCommentHandler = async (event) => {
     event.preventDefault();
   
-    const newComment = document.querySelector('#comment').value.trim();
-    const music_id = 3
+    const description = event.target.querySelector('.form-input').value.trim();
+    const music_id = event.target.dataset.musicId;
 
-    if (newComment) {
+    if (description && music_id) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
-        body: JSON.stringify({ newComment, music_id }),
+        body: JSON.stringify({ description, music_id }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
       if (response.ok) {
-        document.location.replace('/');
+        const scrollPosition = window.scrollY;
+
+        window.location.reload();
+
+        window.scrollTo(0, scrollPosition);
       } else {
         alert('Failed to comment');
       }
     }
   };
 
-  document
-  .querySelector('.new-comment')
-  .addEventListener('submit', newCommentHandler);
+  const comments = document.querySelectorAll('.new-comment');
+  comments.forEach(comment=> {
+    comment.addEventListener('submit', newCommentHandler);
+  });
