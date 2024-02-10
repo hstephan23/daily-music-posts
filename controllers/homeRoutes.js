@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
           ],
         });
         const musicPosts = musicData.map((music) => music.get ({ plain: true }));
-        console.log(JSON.stringify(musicPosts));
         
         res.render('homepage', {
             musicPosts,

@@ -10,8 +10,7 @@ router.post('/', withAuth,async (req, res) => {
             genre: req.body.genre,
             user_id: req.session.user_id,
         });
-        console.log('no issue with musicData');
-        console.log(musicData);
+        
     res.status(200).json(musicData);
     } catch (err) {
         res.status(400).json(err);
