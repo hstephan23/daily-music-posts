@@ -4,6 +4,11 @@ const newCommentHandler = async (event) => {
     const description = event.target.querySelector('.form-input').value.trim();
     const music_id = event.target.dataset.musicId;
 
+    if (description.length > 256) {
+      alert('Must contain less than 256 characters');
+      return;
+    };
+
     if (description && music_id) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
@@ -26,6 +31,6 @@ const newCommentHandler = async (event) => {
   };
 
   const comments = document.querySelectorAll('.new-comment');
-  comments.forEach(comment=> {
+  comments.forEach(comment => {
     comment.addEventListener('submit', newCommentHandler);
   });

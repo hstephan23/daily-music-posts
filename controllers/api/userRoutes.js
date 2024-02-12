@@ -51,18 +51,18 @@ router.post('/login', async (req, res) => {
     }
   });
 
-  router.post('/logout', async (req, res) => {
-    try {
-      if (req.session.logged_in) {
-        req.session.destroy(() => {
-          res.status(204).end();
-        });
-      } else {
-        res.status(404).end();
-      };
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  })
+router.post('/logout', async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    };
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
 
-  module.exports = router;
+module.exports = router;

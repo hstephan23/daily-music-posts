@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Music } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth,async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const musicData = await Music.create({
             artist_name: req.body.artist_name,

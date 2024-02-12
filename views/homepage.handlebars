@@ -4,6 +4,12 @@
     <h3>{{post.artist_name}}</h3>
     <h3>{{post.genre}}</h3>
     <h4>{{format_date post.date_created}} - {{post.user.username}}</h4>
+    <form class="form new-reaction" data-music-id="{{post.id}}">
+        <button type="submit" class="btn btn-primary" value="Like" data-music-id="{{post.id}}">&#128077;</button>
+        <button type="submit" class="btn btn-primary" value="Dislike" data-music-id="{{post.id}}">&#128078;</button>
+        <button type="submit" class="btn btn-primary" value="Heart" data-music-id="{{post.id}}">&#128150;</button>
+        <button type="submit" class="brn btn-primary" value="Happy" data-music-id="{{post.id}}">&#128513;</button>
+    </form>
     <form class="form new-comment" data-music-id="{{post.id}}">
       <div class="form-group">
         <textarea class="form-input" type="text" name="comment" placeholder="Add your comment here..."></textarea>
@@ -17,4 +23,8 @@
     {{/each}}
 </section>
 {{/each}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="/js/commenting.js"></script>
+<script src="/js/reacting.js"></script>
+
+

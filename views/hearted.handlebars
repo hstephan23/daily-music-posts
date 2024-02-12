@@ -1,6 +1,7 @@
-<h1>{{user.username}}</h1>
-{{#if user.music.length}}
-    {{#each user.music as | post |}}
+<h1>Hearted Posts</h1>
+{{#if heartedData.length}}
+    {{#each heartedData as | post |}}
+        <h4>{{post.username}}</h4>
         <h4>{{post.song_title}}</h4>
         <h4>{{post.artist_name}}</h4>
         <h4>{{post.genre}}</h4>

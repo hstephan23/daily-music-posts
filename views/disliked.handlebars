@@ -1,0 +1,9 @@
+<h1>Disliked Posts</h1>
+{{#if dislikedData.length}}
+{{#each dislikedData as | post |}}
+    <h4>{{post.username}}</h4>
+    <h4>{{post.song_title}}</h4>
+    <h4>{{post.artist_name}}</h4>
+    <h4>{{post.genre}}</h4>
+{{/each}}
+{{/if}}
