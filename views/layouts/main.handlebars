@@ -8,40 +8,48 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <header>
-      <h1>
-        <a href="/">Home</a>
-      </h1>
-    {{#if logged_in}}
-      <form class="search-form" method="post">
-        <input class="form-input" placeholder="Search" id="search-bar">
-        <button type="submit" class="btn btn-primary">Search</button>
-      </form>
-      <button id="logout">Logout</button>
-      <div class="row mt-4">
-      <div class="col-md-6">
-        <h3>What are you listening to?</h3>
-        <img src='/assets/bobbing-cat.gif'>
-        <form class="form new-post-form">
-          <div class="form-group">
-            <input class="form-input" type="text" id="song-name" name="song-name" placeholder="Song Title" />
-          </div>
-          <div class="form-group">
-            <input class="form-input" id="artist-name" name="artist-name" placeholder="Artist's Name" /> 
-          </div>
-          <div class="form-group">
-            <input class="form-input" id="genre" name="genre" placeholder="Genre" />
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Create Post</button>
-          </div>
-        </form>
+    <header class="heading">
+      <div class="heading-container">
+        <h1 id="home">
+          <a href="/">Home</a>
+        </h1>
+        {{#if (not logged_in)}}
+        <h3 id="login">
+        <a href="/login">Login</a>
+        </h3>
+        {{else}}
+        <button id="logout">Logout</button>
+        {{/if}}
       </div>
-    {{else}}
-    <h5>
-    <a href="/login">Login</a>
-    </h5>
-    {{/if}}
+      {{#if logged_in}}
+        <div class="search-bar">
+          <form class="search-form" method="post">
+              <input class="form-input" placeholder="Search" id="search-bar">
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      {{/if}}
+      {{#if logged_in}}
+        <div class="row mt-4">
+        <div class="col-md-6">
+          <h3>What are you listening to?</h3>
+          <img src='/assets/bobbing-cat.gif'>
+          <form class="form new-post-form">
+            <div class="form-group">
+              <input class="form-input" type="text" id="song-name" name="song-name" placeholder="Song Title" />
+            </div>
+            <div class="form-group">
+              <input class="form-input" id="artist-name" name="artist-name" placeholder="Artist's Name" /> 
+            </div>
+            <div class="form-group">
+              <input class="form-input" id="genre" name="genre" placeholder="Genre" />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Create Post</button>
+            </div>
+          </form>
+        </div>
+      {{/if}}
     </header>
     {{{ body }}}
 

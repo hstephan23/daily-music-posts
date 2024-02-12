@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
             },
             {
                 model: Comments,
-                attributes: ['description'],    
+                attributes: ['description', 'username'],    
             },
             {
                 model: Reactions,
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
           ],
         });
         const musicPosts = musicData.map((music) => music.get ({ plain: true }));
-        
+        console.log(musicPosts);
         res.render('homepage', {
             musicPosts,
             logged_in: req.session.logged_in

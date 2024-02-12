@@ -30,11 +30,11 @@ Comments.init(
         key: 'id',
       },
       },
-    user_id: {
-      type: DataTypes.INTEGER,
+    username: {
+      type: DataTypes.STRING,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'username',
       },
     },
   },

@@ -1,10 +1,23 @@
 <section>
-<h1>{{user.username}}</h1>
-{{#if user.music.length}}
-    {{#each user.music as | post |}}
-        <h4>{{post.song_title}}</h4>
-        <h4>{{post.artist_name}}</h4>
-        <h4>{{post.genre}}</h4>
-    {{/each}}
-{{/if}}
+    <h1>{{user.username}}</h1>
+    {{#if user.music.length}}
+        {{#each user.music as | post |}}
+            <div class="post-container-profile">
+                <h2 class="profile-title">{{post.song_title}}</h2>
+                <h4 class="profile-artist">By: {{post.artist_name}}</h4>
+                <h4 class="profile-genre">{{post.genre}}</h4>
+            </div>
+            {{#each post.comments as | commentSection |}}
+                    {{#each commentSection as | comment |}}
+                        {{#if (check_music_id comment.music_id post.music_id)}}
+                            <div class="comment-container">
+                                <h3 id="comment-username">{{comment.username}}:</h3>
+                                <p id="comment-content">{{comment.description}}</p>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+            {{/each}}
+        {{/each}}
+    {{/if}}
 </section>
+

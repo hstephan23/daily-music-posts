@@ -9,7 +9,7 @@ User.hasMany(Music, {
   });
 
 User.hasMany(Comments, {
-  foreignKey: 'user_id',
+  foreignKey: 'username',
     onDelete: 'CASCADE'
 })
 
@@ -29,7 +29,7 @@ Music.hasMany(Reactions, {
   });
 
 Comments.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'username'
   });
 
 Comments.belongsTo(Music, {
@@ -47,6 +47,7 @@ Reactions.belongsTo(Music, {
 Music.belongsTo(User, {
     foreignKey: 'user_id'
   });
+
 
 
 module.exports = { User, Comments, Reactions, Music };

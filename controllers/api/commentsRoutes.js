@@ -6,7 +6,7 @@ router.post('/', withAuth,async (req, res) => {
     try {
         const commentsData = await Comments.create({
             description: req.body.description,
-            user_id: req.session.user_id,
+            username: req.body.username,
             music_id: req.body.music_id
         });
         

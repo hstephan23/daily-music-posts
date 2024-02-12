@@ -1,16 +1,16 @@
 [
   {
-    "user_id" : 4,
+    "username" : "jsonEnjoyer",
     "music_id": 2,
     "description": "Ok music."
   },
   {
-    "user_id" : 2,
+    "username" : "musicLover",
     "music_id": 1,
     "description": "Good job!"
   },
   {
-    "user_id" : 1,
+    "username" : "popularGuyInSchool",
     "music_id": 3,
     "description": "Sucks, try again."
   }

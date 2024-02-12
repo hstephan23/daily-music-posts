@@ -1,11 +1,15 @@
-<h1>Liked Posts</h1>
-{{#if likedData.length}}
-    {{#each likedData as | post |}}
-        <h4>{{post.username}}</h4>
-        <h4>{{post.song_title}}</h4>
-        <h4>{{post.artist_name}}</h4>
-        <h4>{{post.genre}}</h4>
-    {{/each}}
-{{/if}}
+<section>
+    <h1>Liked Posts</h1>
+    {{#if likedData.length}}
+        {{#each likedData as | post |}}
+            <div class="post-container">
+                <h4 class="post-username">Liked By: {{post.username}}</h4>
+                <h2 class="post-title">{{post.song_title}}</h2>
+                <h3 class="post-artist">{{post.artist_name}}</h3>
+                <h4 class="post-genre">{{post.genre}}</h4>
+            </div>
+        {{/each}}
+    {{/if}}
+</section>
 
 

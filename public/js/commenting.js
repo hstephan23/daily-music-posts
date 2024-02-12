@@ -3,6 +3,7 @@ const newCommentHandler = async (event) => {
   
     const description = event.target.querySelector('.form-input').value.trim();
     const music_id = event.target.dataset.musicId;
+    const username ='jsonEnjoyer';
 
     if (description.length > 256) {
       alert('Must contain less than 256 characters');
@@ -12,21 +13,21 @@ const newCommentHandler = async (event) => {
     if (description && music_id) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
-        body: JSON.stringify({ description, music_id }),
+        body: JSON.stringify({ description, music_id, username }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
+    
+    if (response.ok) {
+      const scrollPosition = window.scrollY;
 
-      if (response.ok) {
-        const scrollPosition = window.scrollY;
+      window.location.reload();
 
-        window.location.reload();
-
-        window.scrollTo(0, scrollPosition);
-      } else {
-        alert('Failed to comment');
-      }
+      window.scrollTo(0, scrollPosition);
+    } else {
+      alert('Failed to comment');
+    }
     }
   };
 

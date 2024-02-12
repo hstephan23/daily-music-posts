@@ -27,23 +27,86 @@ section {
     cursor: pointer;
 }
 
-h1 {
-    text-align: center;
-}
-
-h5 {
-    font-size: large;
-    float: right;
-}
-
-#logout {
-    float: right;
-}
-
 #logout:hover {
     background-color: darkred;
     color: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     cursor: pointer;
 }
+
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#home {
+    margin-left: 15px;
+}
+
+#logout {
+    margin: 30px 15px 30px 0;
+}
+
+#login {
+    margin-right: 15px;
+    padding-top: 19px;
+}
+
+.search-bar {
+ text-align: center;   
+}
   
+.comment-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-top: darkblue 2.5px solid;
+}
+
+#comment-content {
+    padding-left: 15px;
+}
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    border: darkblue solid 5px;
+}
+
+.post-username {
+    padding-right: 15px;
+    flex-basis: 33%;
+}
+
+.post-artist {
+    padding-left: 15px;
+    flex-basis: 33%;
+}
+
+.post-genre {
+    flex-basis: 100%;
+    margin-top: -15px;
+}
+
+.post-container-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    border-right: darkblue solid 5px;
+    border-left: darkblue solid 5px;
+    border-top: darkblue solid 5px;
+}
+
+.profile-title {
+    flex-basis: 30%;
+    padding-left: 45px;
+}
+
+.profile-genre {
+    flex-basis: 100%;
+    margin-top: -15px;
+}

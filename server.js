@@ -13,6 +13,10 @@ const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
+// extend for multiple parameters
+hbs.handlebars.registerHelper("check_music_id", function(post_id, comment_id) {
+  return (post_id === comment_id);
+});
 
 const sess = {
   secret: 'Super secret secret',
