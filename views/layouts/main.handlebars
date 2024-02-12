@@ -9,6 +9,9 @@
 </head>
 <body>
     <header>
+      <h1>
+        <a href="/">Home</a>
+      </h1>
     {{#if logged_in}}
       <form class="search-form" method="post">
         <input class="form-input" placeholder="Search" id="search-bar">
@@ -35,7 +38,9 @@
         </form>
       </div>
     {{else}}
+    <h5>
     <a href="/login">Login</a>
+    </h5>
     {{/if}}
     </header>
     {{{ body }}}

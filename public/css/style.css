@@ -27,7 +27,12 @@ section {
     cursor: pointer;
 }
 
-a {
+h1 {
+    text-align: center;
+}
+
+h5 {
+    font-size: large;
     float: right;
 }
 
