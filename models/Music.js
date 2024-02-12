@@ -14,14 +14,23 @@ Music.init(
     song_title: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1, 100]
+        },
     },
     artist_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1, 100]
+        },
     },
     genre: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1, 100]
+        },
     },
     date_created: {
       type: DataTypes.DATE,
