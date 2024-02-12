@@ -1,0 +1,44 @@
+header {
+    font-size: large;
+}
+  
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: cadetblue;
+}
+
+section {
+    text-align: center;
+    border-top: 3px solid darkblue;
+}
+
+.col-md-6 {
+    text-align: center;
+}
+
+.btn-primary {
+    margin: 5px;
+}
+
+.btn-primary:hover {
+    background-color: green;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+a {
+    float: right;
+}
+
+#logout {
+    float: right;
+}
+
+#logout:hover {
+    background-color: darkred;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+  
