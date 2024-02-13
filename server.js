@@ -20,9 +20,7 @@ hbs.handlebars.registerHelper("check_music_id", function(post_id, comment_id) {
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {
-    expires: new Date(Date.now() + (1000 * 60 * 60)),
-  },
+  cookie: {},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
