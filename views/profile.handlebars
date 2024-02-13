@@ -1,23 +1,42 @@
-<section>
+<section class="username-section">
     <h1>{{user.username}}</h1>
-    {{#if user.music.length}}
-        {{#each user.music as | post |}}
-            <div class="post-container-profile">
-                <h2 class="profile-title">{{post.song_title}}</h2>
-                <h4 class="profile-artist">By: {{post.artist_name}}</h4>
-                <h4 class="profile-genre">{{post.genre}}</h4>
-            </div>
-            {{#each post.comments as | commentSection |}}
-                    {{#each commentSection as | comment |}}
-                        {{#if (check_music_id comment.music_id post.music_id)}}
-                            <div class="comment-container">
-                                <h3 id="comment-username">{{comment.username}}:</h3>
-                                <p id="comment-content">{{comment.description}}</p>
-                            </div>
-                        {{/if}}
-                    {{/each}}
+        {{#if user.music.length}}
+            {{#each user.music as | post |}}
+            <section class="post-section">
+                <div class="post-container-profile">
+                    <h2 class="profile-title">{{post.song_title}}</h2>
+                    <h4 class="profile-artist">By: {{post.artist_name}}</h4>
+                    <h4 class="profile-genre">{{post.genre}}</h4>
+                </div>
+                <form class="form new-reaction" data-music-id="{{post.music_id}}">
+                    <button type="button" class="btn btn-primary" value="Like" data-music-id="{{post.music_id}}">&#128077;</button>
+                    <button type="button" class="btn btn-primary" value="Dislike" data-music-id="{{post.music_id}}">&#128078;</button>
+                    <button type="button" class="btn btn-primary" value="Heart" data-music-id="{{post.music_id}}">&#128150;</button>
+                    <button type="button" class="btn btn-primary" value="Happy" data-music-id="{{post.music_id}}">&#128513;</button>
+                </form>
+                <form class="form new-comment" data-music-id="{{post.music_id}}">
+                    <div class="form-group">
+                    <textarea class="form-input" type="text" name="comment" placeholder="Add your comment here..."></textarea>
+                    </div>
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                {{#each post.comments as | commentSection |}}
+                        {{#each commentSection as | comment |}}
+                            {{#if (check_music_id comment.music_id post.music_id)}}
+                                <div class="comment-container">
+                                    <h3 id="comment-username">{{comment.username}}:</h3>
+                                    <p id="comment-content">{{comment.description}} - {{format_date comment.date_created}}</p>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                {{/each}}
+            </section>
             {{/each}}
-        {{/each}}
-    {{/if}}
+        {{/if}}
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="/js/commenting.js"></script>
+<script src="/js/reacting.js"></script>
 

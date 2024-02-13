@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// extend the class
 class Comments extends Model {}
-
+// used ERD to determine necessary pieces 
 Comments.init(
   {
     id: {
@@ -47,4 +48,5 @@ Comments.init(
   }
 );
 
+// export the model
 module.exports = Comments;

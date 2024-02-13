@@ -1,18 +1,23 @@
 const newSearchHandler = async (event) => {
-    event.preventDefault();
-    
-    const username = document.querySelector('#search-bar').value.trim();
-
-    if (username) {
-      try {
-        const newLink = `/api/profile/?username=${username}`;
-        document.location.replace(newLink);
-      } catch (err) {
-        console.log(err);
-      }
+  // preventing the default of refreshing the page
+  event.preventDefault();
+  // getting values from the page
+  const username = document.querySelector('#search-bar').value.trim();
+  // checking if it exists
+  if (username) {
+    try {
+      // getting the new link
+      const newLink = `/api/profile/?username=${username}`;
+      // taking to the new link
+      document.location.replace(newLink);
+      // catching errors
+    } catch (err) {
+      console.log(err);
     }
-  };
+  }
+};
 
+// adding an event listener to the search form
 document
   .querySelector('.search-form')
   .addEventListener('submit', newSearchHandler);

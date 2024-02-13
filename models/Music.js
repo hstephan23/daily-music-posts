@@ -1,8 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// extend the class
 class Music extends Model {}
 
+// used ERD to determine necessary pieces 
 Music.init(
   {
     id: {
@@ -54,4 +56,5 @@ Music.init(
   }
 );
 
+// export the model
 module.exports = Music;
