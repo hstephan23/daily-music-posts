@@ -18,7 +18,9 @@ Built on:
 
 ## Installation
 
-N/A
+```
+npm install
+```
 
 
 ## Credits
