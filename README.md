@@ -13,6 +13,8 @@ Built on:
 * express-session
 * mysql2
 * sequelize
+* handlebars
+* animejs
 
 ## Installation
 
@@ -37,7 +39,7 @@ https://github.com/hstephan23/daily-music-posts
 
 ## Website
 
-
+https://daily-music-posts-6e938fa20b09.herokuapp.com
 
 ## Future feature development
 * Main page

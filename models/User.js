@@ -1,13 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-
+// class to extend, add the method for use
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
+// used ERD to determine necessary pieces 
 User.init(
   {
     id: {
@@ -20,9 +21,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      //validate: {
-      //  isEmail: true,
-      //},
     },
     password: {
       type: DataTypes.STRING,
@@ -32,6 +30,7 @@ User.init(
       },
     },
   },
+  // hooks to run the methods here
   {
     hooks: {
       beforeCreate: async (newUserData) => {
@@ -51,4 +50,5 @@ User.init(
   }
 );
 
+// export the model
 module.exports = User;

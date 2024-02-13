@@ -1,16 +1,17 @@
 {{#each musicPosts as |post| }}
-<section>
+<section class="post-section">
   <div class="post-container">
-    <h4 class="post-username">{{format_date post.date_created}} - {{post.user.username}}</h4>
-    <h2 class="post-title"><a href="/api/profile/?username={{post.user.username}}">{{post.song_title}}</a></h2>
+    <h3 class="post-date">{{format_date post.date_created}}</h3>
+    <h3 class="post-username"><a href="/api/profile/?username={{post.user.username}}">{{post.user.username}}</a></h3>
+    <h2 class="post-title">{{post.song_title}}</h2>
     <h3 class="post-artist">By: {{post.artist_name}}</h3>
     <h4 class="post-genre">{{post.genre}}</h4>
   </div>
   <form class="form new-reaction" data-music-id="{{post.id}}">
-      <button type="submit" class="btn btn-primary" value="Like" data-music-id="{{post.id}}">&#128077;</button>
-      <button type="submit" class="btn btn-primary" value="Dislike" data-music-id="{{post.id}}">&#128078;</button>
-      <button type="submit" class="btn btn-primary" value="Heart" data-music-id="{{post.id}}">&#128150;</button>
-      <button type="submit" class="brn btn-primary" value="Happy" data-music-id="{{post.id}}">&#128513;</button>
+      <button type="button" class="btn btn-primary" value="Like" data-music-id="{{post.id}}">&#128077;</button>
+      <button type="button" class="btn btn-primary" value="Dislike" data-music-id="{{post.id}}">&#128078;</button>
+      <button type="button" class="btn btn-primary" value="Heart" data-music-id="{{post.id}}">&#128150;</button>
+      <button type="button" class="btn btn-primary" value="Happy" data-music-id="{{post.id}}">&#128513;</button>
   </form>
   <form class="form new-comment" data-music-id="{{post.id}}">
     <div class="form-group">
@@ -23,7 +24,7 @@
   {{#each post.comments as |comment|}}
     <div class="comment-container">
       <h3 id="comment-username">{{comment.username}}:</h3>
-      <p id="comment-content">{{comment.description}}</p>
+      <p id="comment-content">{{comment.description}} - {{format_date comment.date_created}}</p>
     </div>
   {{/each}}
 </section>

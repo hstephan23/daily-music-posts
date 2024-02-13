@@ -1,15 +1,33 @@
 header {
     font-size: large;
+    font-family: "Pixelify Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
   
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Pixelify Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: cadetblue;
+    background-image: linear-gradient(to bottom right, cadetblue, whitesmoke);
 }
 
-section {
+.gif {
+    border-radius: 10px;
+    height: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.username-section {
     text-align: center;
-    border-top: 3px solid darkblue;
+}
+.post-section {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 20% 20px 20%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.form-input {
+    border-radius: 5px;
 }
 
 .col-md-6 {
@@ -18,30 +36,48 @@ section {
 
 .btn-primary {
     margin: 5px;
+    border-radius: 5px;
 }
 
 .btn-primary:hover {
-    background-color: green;
+    background-color: darkcyan;
     color: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #logout:hover {
-    background-color: darkred;
+    background-color: rgb(237, 60, 60);
     color: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .heading-container {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin: 0 20% 0 20%;
 }
 
 #home {
     margin-left: 15px;
+    color: #007374;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: white;
 }
 
 #logout {
@@ -54,14 +90,16 @@ section {
 }
 
 .search-bar {
- text-align: center;   
+ text-align: center;  
 }
   
 .comment-container {
     display: flex;
     justify-content: center;
     align-items: baseline;
-    border-top: darkblue 2.5px solid;
+    border-radius: 10px;
+    background-color: #0e9ca5;
+    background-image: linear-gradient(to right, #007374, #0e9ca5, #007374);
 }
 
 #comment-content {
@@ -73,17 +111,24 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
-    border: darkblue solid 5px;
+    background-color: grey;
+    background-image: linear-gradient(to right, rgb(178, 174, 174), #007374, rgb(178, 174, 174));
+    border-radius: 10px;
+}
+
+.post-date {
+    flex-basis: 100%;
+    margin-bottom: -15px;
 }
 
 .post-username {
     padding-right: 15px;
-    flex-basis: 33%;
+    flex-basis: 30%;
 }
 
 .post-artist {
     padding-left: 15px;
-    flex-basis: 33%;
+    flex-basis: 30%;
 }
 
 .post-genre {
@@ -96,14 +141,12 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
-    border-right: darkblue solid 5px;
-    border-left: darkblue solid 5px;
-    border-top: darkblue solid 5px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, grey, #007374, grey);
 }
 
 .profile-title {
-    flex-basis: 30%;
-    padding-left: 45px;
+    padding-right: 15px;
 }
 
 .profile-genre {

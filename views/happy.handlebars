@@ -1,9 +1,9 @@
-<section>
+<section class="username-section">
     <h1>Happy Posts</h1>
     {{#if happyData.length}}
     {{#each happyData as | post |}}
-        <div class="post-container">
-            <h4 class="profile-title">Smiled By: {{post.username}}</h4>
+        <div class="post-container post-section">
+            <h3 class="profile-title">Smiled By: {{post.username}}</h3>
             <h2 class="post-title">{{post.song_title}}</h2>
             <h3 class="post-artist">{{post.artist_name}}</h3>
             <h4 class="post-genre">{{post.genre}}</h4>

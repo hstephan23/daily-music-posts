@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Music</title>
+    <title>Music Daily</title>
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="heading">
       <div class="heading-container">
-        <h1 id="home">
+        <h2 id="home">
           <a href="/">Home</a>
-        </h1>
+        </h2>
+        <h1>Music Daily</h1>
         {{#if (not logged_in)}}
         <h3 id="login">
         <a href="/login">Login</a>
         </h3>
         {{else}}
-        <button id="logout">Logout</button>
+        <button id="logout" class="btn-primary">Logout</button>
         {{/if}}
       </div>
       {{#if logged_in}}
         <div class="search-bar">
           <form class="search-form" method="post">
-              <input class="form-input" placeholder="Search" id="search-bar">
+              <input class="form-input" placeholder="Username" id="search-bar">
               <button type="submit" class="btn btn-primary">Search</button>
           </form>
         </div>
@@ -32,8 +36,8 @@
       {{#if logged_in}}
         <div class="row mt-4">
         <div class="col-md-6">
+          <img src='/assets/bobbing-cat.gif' class="gif">
           <h3>What are you listening to?</h3>
-          <img src='/assets/bobbing-cat.gif'>
           <form class="form new-post-form">
             <div class="form-group">
               <input class="form-input" type="text" id="song-name" name="song-name" placeholder="Song Title" />

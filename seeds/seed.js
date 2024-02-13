@@ -5,6 +5,7 @@ const musicData = require("./musicData.json");
 const reactionsData = require("./reactionsData.json");
 const userData = require("./userData.json");
 
+// seeding the data base
 const seedDatabase = async () => {
     await sequelize.sync({force : true})
     const users = await User.bulkCreate(userData, {
@@ -23,4 +24,5 @@ const seedDatabase = async () => {
     process.exit(0);
 };
 
+// call function
 seedDatabase();
